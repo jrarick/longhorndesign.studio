@@ -1,0 +1,33 @@
+---
+title: 'Creating a Table With Pinned Columns and Virtualization using TansStack Table'
+publishedAt: '2024-10-17'
+summary: 'TanStack Table is a powerful library for building tables in React. We'll explore how to create a table with pinned columns and virtualization using TanStack Table.'
+---
+
+TanStack Table is the gold standard for building fully customizable tables with complex functionality in React. The documentation contains excellent examples for how to implement various features. This includes virtualizing rows and columns for performace with large datasets and the ability to 'pin' columns to the beginning or end of the table. If you need to use virtualization and column pinning in the same table, it can get quite tricky and there isn't a great example within the docs on how to use these features together.
+
+## How does virtualization work?
+
+If you have a dataset with 1,000 rows and 1,000 columns that's represented in a table, your web browser will need to render one million cells all at once which causes huge performance issues. This is where virtualization comes into play. Instead of rendering all the cells at once, a virtualized table will only render the cells that are currently visible in the viewport (maybe a few hundred) and a few 'buffer' cells outside the viewport.
+
+Once the user scrolls, the table will render the next set of cells and remove the ones that have scrolled out of view. This process is repeated as the user continues to scroll to ensure the browser doesn't need to render every cell in the table at once.
+
+In order to maintain the scroll position of the table after the out-of-view cells are removed, the amount of space the removed cells needs to be calculated. Padding that's equal to the size of the cumulative size of those cells is added to the cells to the left, right, top, or bottom, depending on where the user's scroll position is on the table. So if the table is scrolled 20 cells to the left with each cell measuring 100px, then those cells would be removed and 2000px of padding would be added to the left of the table. TanStack also has a library for virtualization that integrates with TanStack Table called [TanStack Virtual](https://tanstack.com/virtual). We can set up a simple column virtualizer like this:
+
+```tsx
+import { useVirtualizer } from '@tanstack/react-virtual'
+
+const columnVirtualizer = useVirtualizer({
+  count: visibleColumns.length, // the number of columns currently visible in the table
+  estimateSize: (index) => visibleColumns[index].getSize(), //estimate width of each column for accurate scrollbar dragging
+  getScrollElement: () => tableContainerRef.current,
+  horizontal: true,
+  overscan: 3, //how many columns to render on each side off screen each way
+})
+```
+
+## How does column pinning work?
+
+Column pinning is another useful feature that allows the user to lock a relavent column in place so it's always visible for quick comparison while the rest of the columns scroll horizontally. The column is removed from the normal column order and instead 'pinned' to the beginning or end of the table.
+
+## The Problem

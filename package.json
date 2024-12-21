@@ -4,17 +4,33 @@
   "scripts": {
     "build": "react-router build && node vercel/prepare.js",
     "dev": "cross-env NODE_ENV=development node ./dev-server.js",
+    "format": "prettier --write .",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@conform-to/react": "^1.2.2",
+    "@conform-to/zod": "^1.2.2",
+    "@mdx-js/rollup": "^3.1.0",
+    "@radix-ui/react-slot": "^1.1.1",
     "@react-router/express": "*",
     "@react-router/node": "*",
+    "@tailwindcss/typography": "^0.5.15",
     "@vercel/node": "^3.2.25",
+    "class-variance-authority": "^0.7.1",
     "express": "^4.21.1",
     "isbot": "^5.1.17",
+    "lenis": "^1.1.18",
+    "motion": "^11.15.0",
+    "prettier-plugin-tailwindcss": "^0.6.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router": "*"
+    "react-router": "*",
+    "rehype-pretty-code": "^0.14.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-mdx-frontmatter": "^5.0.0",
+    "resend": "^4.0.1",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@react-router/dev": "*",
@@ -25,6 +41,7 @@
     "autoprefixer": "^10.4.20",
     "cross-env": "^7.0.3",
     "postcss": "^8.4.49",
+    "prettier": "3.4.2",
     "tailwindcss": "^3.4.16",
     "typescript": "^5.7.2",
     "vite": "^5.4.11",
