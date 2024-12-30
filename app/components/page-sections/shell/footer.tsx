@@ -62,7 +62,7 @@ export default function Footer() {
         </div>
         <motion.p
           variants={itemVariants}
-          className="mt-10 text-center text-xs/6 text-stone-500"
+          className="mt-10 text-center text-xs/6 text-stone-400"
         >
           &copy; {new Date().getFullYear()} Longhorn Design Studio, LLC
         </motion.p>
@@ -76,11 +76,12 @@ const navigation = {
     { name: "About", href: "/about" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/#contact" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
   ],
   social: [
     {
       name: "Facebook",
-      href: "#",
+      href: "https://www.facebook.com/longhorndesign.studio",
       icon: (props: SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -93,7 +94,7 @@ const navigation = {
     },
     {
       name: "Instagram",
-      href: "#",
+      href: "https://www.instagram.com/longhorndesign.studio",
       icon: (props: SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path

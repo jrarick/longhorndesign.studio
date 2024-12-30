@@ -6,7 +6,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { baseUrl } from "./sitemap";
 import Footer from "./components/page-sections/shell/footer";
 import Header from "./components/page-sections/shell/header";
-import ReactLenis from "@studio-freight/react-lenis";
 import SmoothScrolling from "./components/animations/smooth-scrolling";
 
 const lora = Lora({ subsets: ["latin"], variable: "--font-lora" });
@@ -39,8 +38,6 @@ export const metadata: Metadata = {
   },
 };
 
-const cx = (...classes) => classes.filter(Boolean).join(" ");
-
 export default function RootLayout({
   children,
 }: {
@@ -54,7 +51,7 @@ export default function RootLayout({
       <body className="antialiased dark bg-stone-950 font-serif text-stone-100 selection:bg-marzipan-200 selection:text-stone-950">
         <SmoothScrolling>
           <Header />
-          {children}
+          <main>{children}</main>
           <Footer />
         </SmoothScrolling>
         <Analytics />

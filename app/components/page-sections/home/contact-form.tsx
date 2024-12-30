@@ -29,7 +29,7 @@ export default function ContactForm() {
     onValidate({ formData }) {
       return parseWithZod(formData, { schema: contactFormSchema });
     },
-    shouldValidate: "onBlur",
+    shouldValidate: "onSubmit",
     shouldRevalidate: "onInput",
   });
 
@@ -86,9 +86,14 @@ export default function ContactForm() {
                 placeholder="Name"
                 {...getInputProps(fields.name, { type: "text" })}
               />
-              <div className="text-xs text-mexican-red-500 mt-1">
-                {fields.name.errors}
-              </div>
+              {fields.name.errors && (
+                <div
+                  className="text-xs text-mexican-red-500 mt-1"
+                  aria-errormessage={fields.name.id}
+                >
+                  {fields.name.errors}
+                </div>
+              )}
             </motion.div>
             <motion.div variants={itemVariants}>
               <Input
@@ -96,9 +101,14 @@ export default function ContactForm() {
                 placeholder="Email Address"
                 {...getInputProps(fields.email, { type: "email" })}
               />
-              <div className="text-xs text-mexican-red-500 mt-1">
-                {fields.email.errors}
-              </div>
+              {fields.email.errors && (
+                <div
+                  className="text-xs text-mexican-red-500 mt-1"
+                  aria-errormessage={fields.email.id}
+                >
+                  {fields.email.errors}
+                </div>
+              )}
             </motion.div>
             <motion.div variants={itemVariants} className="col-span-2">
               <Textarea
@@ -107,9 +117,14 @@ export default function ContactForm() {
                 className="min-h-48"
                 {...getTextareaProps(fields.message)}
               />
-              <div className="text-xs text-mexican-red-500 mt-1">
-                {fields.message.errors}
-              </div>
+              {fields.message.errors && (
+                <div
+                  className="text-xs text-mexican-red-500 mt-1"
+                  aria-errormessage={fields.message.id}
+                >
+                  {fields.message.errors}
+                </div>
+              )}
             </motion.div>
             <motion.div variants={itemVariants}>
               <Button type="submit" className="font-semibold">
