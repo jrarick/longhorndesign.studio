@@ -66,6 +66,7 @@ module.exports = {
           '950': '#1c1b17',
         },
         stone: {
+          '750': '#373330',
           '925': '#141110',
         },
         background: 'hsl(var(--background))',

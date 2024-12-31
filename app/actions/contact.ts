@@ -1,7 +1,7 @@
 "use server";
 
 import { parseWithZod } from "@conform-to/zod";
-import { contactFormSchema } from "../schemas/contact-form";
+import { contactFormSchema } from "@/app/schemas/contact-form";
 import { Resend } from "resend";
 
 export async function contact(prevState: unknown, formData: FormData) {

@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Input } from "../../ui/input";
+import { Input } from "@/app/components/ui/input";
 import { getInputProps, getTextareaProps, useForm } from "@conform-to/react";
 import { useFormState } from "react-dom";
 import { parseWithZod } from "@conform-to/zod";
 import { contact } from "@/app/actions/contact";
 import { contactFormSchema } from "@/app/schemas/contact-form";
-import { Textarea } from "../../ui/textarea";
-import { Button } from "../../ui/button";
+import { Textarea } from "@/app/components/ui/textarea";
+import { Button } from "@/app/components/ui/button";
 
 const itemVariants = {
   hidden: {

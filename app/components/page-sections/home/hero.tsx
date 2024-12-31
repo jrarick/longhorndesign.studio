@@ -18,12 +18,12 @@ export default function Hero() {
       ref={heroRef}
       className="relative isolate -mt-28 overflow-hidden pt-24"
     >
-      <div className="absolute inset-0 bg-stone-950/85">
+      <div className="absolute inset-0 bg-stone-750">
         <motion.img
           style={{ y: yValue }}
           src={canyonBackground.src}
-          alt=""
-          className="h-full w-full object-cover mix-blend-multiply"
+          alt="Hand drawn picture of two cowboys riding horses through a canyon"
+          className="h-full w-full object-cover mix-blend-multiply will-change-auto"
         />
       </div>
       <div className="relative flex flex-col items-center py-52">
