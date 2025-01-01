@@ -47,6 +47,12 @@ export default function RootLayout({
     <html lang="en" className={lora.variable}>
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/ast7rab.css" />
+        <link
+          rel="icon"
+          href="/icon?<generated>"
+          type="image/png"
+          sizes="32x32"
+        />
       </head>
       <body className="antialiased dark bg-stone-950 font-serif text-stone-100 selection:bg-marzipan-200 selection:text-stone-950">
         <SmoothScrolling>
