@@ -118,7 +118,7 @@ export default function Hero() {
           className="mt-6 sm:mt-8 md:mt-12"
         >
           <Link
-            href="/get-started"
+            href="#contact"
             className="bg-contain bg-center bg-no-repeat px-16 py-6 text-lg font-semibold text-marzipan-200 transition-colors duration-200 hover:text-marzipan-100 sm:px-24 sm:py-8 sm:text-xl"
             style={{
               backgroundImage: `url(${brushStroke.src})`,

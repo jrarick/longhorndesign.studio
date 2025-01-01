@@ -82,7 +82,7 @@ export default function Blog({ params }) {
           }),
         }}
       />
-      <div className="prose prose-stone mx-auto dark:prose-invert">
+      <div className="prose prose-stone mx-auto prose-invert">
         <h1 className="mb-0 font-display text-6xl font-medium">
           {post.metadata.title}
         </h1>
