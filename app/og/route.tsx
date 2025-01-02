@@ -1,7 +1,5 @@
 import { ImageResponse } from "next/og";
 import { loadGoogleFont } from "./load-google-font";
-import ldsLogo from "@/app/assets/lds-logo.png";
-import Image from "next/image";
 
 export async function GET(request: Request) {
   let url = new URL(request.url);
