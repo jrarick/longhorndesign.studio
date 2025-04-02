@@ -18,7 +18,7 @@ export default function Hero() {
       ref={heroRef}
       className="relative isolate -mt-28 overflow-hidden pt-24"
     >
-      <div className="absolute inset-0 bg-stone-750">
+      <div className="absolute inset-0 bg-gradient-to-b from-stone-750 to-stone-950 from-75%">
         <motion.img
           style={{ y: yValue }}
           src={canyonBackground.src}
