@@ -3,6 +3,7 @@
 import { parseWithZod } from "@conform-to/zod";
 import { contactFormSchema } from "@/app/schemas/contact-form";
 import { Resend } from "resend";
+import { redirect } from "next/navigation";
 
 export async function contact(prevState: unknown, formData: FormData) {
   const submission = parseWithZod(formData, {
@@ -20,20 +21,16 @@ export async function contact(prevState: unknown, formData: FormData) {
     to: "josh@longhorndesign.studio",
     subject: "New Contact Form Submission",
     html: `
-    <div>
-      <h1>New Contact Form Submission</h1>
-      <p>Name: ${submission.value.name}</p>
-      <p>Email: ${submission.value.email}</p>
-      <p>Message: ${submission.value.message}</p>
-    </div>
-  `,
+      <div>
+        <h1>New Contact Form Submission</h1>
+        <p>Name: ${submission.value.name}</p>
+        <p>Email: ${submission.value.email}</p>
+        <p>Message: ${submission.value.message}</p>
+      </div>
+    `,
   });
 
-  // TODO: Properly handle email sending error
+  if (!error) redirect("/contact-success");
 
-  if (error) {
-    console.error("Error sending email:", error);
-  }
-
-  console.log("Email sent successfully:", data);
+  if (error) redirect("/contact-failure")
 }
