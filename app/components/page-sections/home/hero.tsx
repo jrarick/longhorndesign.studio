@@ -4,8 +4,6 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { TextEffect } from "app/components/animations/text-effect";
 import Link from "next/link";
-import canyonBackground from "app/assets/canyon-background.webp";
-import brushStroke from "app/assets/brush-stroke.png";
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -21,7 +19,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-stone-750 to-stone-950 from-75%">
         <motion.img
           style={{ y: yValue }}
-          src={canyonBackground.src}
+          src="/canyon-background.webp"
           alt="Hand drawn picture of two cowboys riding horses through a canyon"
           className="h-full w-full object-cover mix-blend-multiply will-change-auto"
         />
@@ -121,7 +119,7 @@ export default function Hero() {
             href="#contact"
             className="bg-contain bg-center bg-no-repeat px-16 py-6 text-lg font-semibold text-marzipan-200 transition-colors duration-200 hover:text-marzipan-100 sm:px-24 sm:py-8 sm:text-xl"
             style={{
-              backgroundImage: `url(${brushStroke.src})`,
+              backgroundImage: `url(/brush-stroke.png)`,
             }}
           >
             Get Started

@@ -2,10 +2,6 @@
 
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useRef, useState } from "react";
-import cowboyPolishingRevolver from "app/assets/cowboy-polishing-revolver.webp";
-import cowboyRanching from "app/assets/cowboy-ranching.webp";
-import cowboySaddlingHorse from "app/assets/cowboy-saddling-horse.webp";
-import cowboysPlanning from "app/assets/cowboys-planning.webp";
 import { cn } from "app/lib/utils";
 import { InView } from "app/components/animations/in-view";
 
@@ -22,28 +18,28 @@ const blurbs: Blurb[] = [
     title: "First: Plan",
     content:
       "We'll have discussions to understand business goals, target audience, brand identity, and specific requirements. We conduct research, define project scope, and develop a project roadmap that will guide the next steps of the design process.",
-    image: cowboysPlanning.src,
+    image: "/cowboys-planning.webp",
   },
   {
     id: 2,
     title: "Second: Prepare",
     content:
       "This involves procuring digital assets, creating mockups, curating color palettes and typography, and developing a cohesive design system. We'll also lock down technology choices that we'll build with in the upcoming phase.",
-    image: cowboySaddlingHorse.src,
+    image: "/cowboy-saddling-horse.webp",
   },
   {
     id: 3,
     title: "Third: Execute",
     content:
       "We'll convert static mockups into dynamic, responsive web interfaces. We build a live prototype of the website and ensure cross-browser and cross-device compatibility. This stage involves meticulous attention to both visual design and technical performance.",
-    image: cowboyRanching.src,
+    image: "/cowboy-ranching.webp",
   },
   {
     id: 4,
     title: "Fourth: Refine",
     content:
       "We perform testing for accessibility and browser and device compatibility as well as making changes based on feedback and revisions. Once we're confident your website is free of any critical bugs that could affect usability it's time to send it live.",
-    image: cowboyPolishingRevolver.src,
+    image: "/cowboy-polishing-revolver.webp",
   },
 ];
 

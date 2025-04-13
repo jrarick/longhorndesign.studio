@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import { Input } from "@/app/components/ui/input";
 import { getInputProps, getTextareaProps, useForm } from "@conform-to/react";
-import { useFormState } from "react-dom";
+import { useActionState } from "react";
 import { parseWithZod } from "@conform-to/zod";
 import { contact } from "@/app/actions/contact";
 import { contactFormSchema } from "@/app/schemas/contact-form";
@@ -22,7 +22,7 @@ const itemVariants = {
 };
 
 export default function ContactForm() {
-  const [lastResult, action] = useFormState(contact, undefined);
+  const [lastResult, action] = useActionState(contact, undefined);
   const [form, fields] = useForm({
     // @ts-ignore
     lastResult,

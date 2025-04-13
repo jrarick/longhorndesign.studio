@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { CustomMDX } from "@/app/components/mdx/mdx";
 import { formatDate, getBlogPosts } from "app/blog/utils";
 import { baseUrl } from "app/sitemap";
+import { unstable_ViewTransition as ViewTransition } from "react";
 
 export async function generateStaticParams() {
   let posts = getBlogPosts();
@@ -11,8 +12,10 @@ export async function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+
+  let post = getBlogPosts().find((post) => post.slug === slug);
   if (!post) {
     return;
   }
@@ -51,8 +54,10 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function Blog({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+export default async function Blog({ params }) {
+  const { slug } = await params;
+
+  let post = getBlogPosts().find((post) => post.slug === slug);
 
   if (!post) {
     notFound();
@@ -83,12 +88,19 @@ export default function Blog({ params }) {
         }}
       />
       <div className="prose prose-stone mx-auto prose-invert">
-        <h1 className="mb-0 font-display text-6xl font-medium">
-          {post.metadata.title}
-        </h1>
-        <p className="text-sm text-stone-400">
-          {formatDate(post.metadata.publishedAt)}
-        </p>
+        <ViewTransition name={slug}>
+          <h1 className="mb-0 font-display text-6xl font-medium">
+            {post.metadata.title}
+          </h1>
+        </ViewTransition>
+        <ViewTransition name={slug + "-date"}>
+          <time
+            dateTime={post.metadata.publishedAt}
+            className="text-sm text-stone-400"
+          >
+            {formatDate(post.metadata.publishedAt)}
+          </time>
+        </ViewTransition>
         <hr className="border-stone-800" />
         <article className="">
           <CustomMDX source={post.content} />

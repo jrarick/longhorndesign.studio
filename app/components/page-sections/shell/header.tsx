@@ -1,6 +1,6 @@
 import Link from "next/link";
-import ldsLogo from "app/assets/lds-logo.png";
 import Menu from "./menu";
+import Image from "next/image";
 
 const navigation = [
   { name: "About", href: "/about" },
@@ -17,7 +17,14 @@ export default function Header() {
       >
         <Link href="/" className="-m-1.5 p-1.5">
           <span className="sr-only">Longhorn Design Studio</span>
-          <img alt="" src={ldsLogo.src} className="h-14 w-auto" />
+          <Image
+            alt="Longhorn Design Studio Logo"
+            src="/lds-logo.png"
+            className="h-14 w-auto"
+            width={154}
+            height={56}
+            priority
+          />
         </Link>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
