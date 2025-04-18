@@ -180,8 +180,6 @@ const createVariantsWithTransition = (
 
   const { exit: _, ...mainTransition } = transition;
 
-  console.log(transition);
-
   return {
     ...baseVariants,
     visible: {
