@@ -44,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={lora.variable}>
+    <html lang="en" className={`${lora.variable} dark`}>
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/ast7rab.css" />
         <link
@@ -54,7 +54,10 @@ export default function RootLayout({
           sizes="32x32"
         />
       </head>
-      <body className="antialiased dark bg-stone-950 font-serif text-stone-100 selection:bg-marzipan-200 selection:text-stone-950">
+      <body
+        data-theme="dark"
+        className="antialiased dark bg-stone-950 font-serif text-stone-100 selection:bg-marzipan-200 selection:text-stone-950"
+      >
         <SmoothScrolling>
           <Header />
           <main>{children}</main>
