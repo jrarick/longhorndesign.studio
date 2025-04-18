@@ -1,6 +1,120 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-serif: var(--font-lora), serif;
+  --font-display: birch-std, serif;
+
+  --color-marzipan-50: #fff9eb;
+  --color-marzipan-100: #ffedc6;
+  --color-marzipan-150: #ffeaaf;
+  --color-marzipan-200: #ffe09e;
+  --color-marzipan-300: #ffbf4a;
+  --color-marzipan-400: #ffa620;
+  --color-marzipan-500: #f98207;
+  --color-marzipan-600: #dd5d02;
+  --color-marzipan-700: #b73e06;
+  --color-marzipan-800: #942f0c;
+  --color-marzipan-900: #7a270d;
+  --color-marzipan-950: #461202;
+
+  --color-brandy-50: #fbf8f1;
+  --color-brandy-100: #f5eddf;
+  --color-brandy-200: #ead9be;
+  --color-brandy-300: #dfc39e;
+  --color-brandy-400: #cd9d6a;
+  --color-brandy-500: #c2844d;
+  --color-brandy-600: #b57041;
+  --color-brandy-700: #965838;
+  --color-brandy-800: #794833;
+  --color-brandy-900: #623d2c;
+  --color-brandy-950: #351e15;
+
+  --color-mexican-red-50: #fef2f3;
+  --color-mexican-red-100: #ffe1e3;
+  --color-mexican-red-200: #ffc9cc;
+  --color-mexican-red-300: #fea3a8;
+  --color-mexican-red-400: #fc6d74;
+  --color-mexican-red-500: #f43f48;
+  --color-mexican-red-600: #e1212b;
+  --color-mexican-red-700: #bd1820;
+  --color-mexican-red-800: #a0181f;
+  --color-mexican-red-900: #821a1f;
+  --color-mexican-red-950: #47080b;
+
+  --color-mine-shaft-50: #f7f7f6;
+  --color-mine-shaft-100: #e6e4e1;
+  --color-mine-shaft-200: #cdc8c2;
+  --color-mine-shaft-300: #aca59c;
+  --color-mine-shaft-400: #8a8377;
+  --color-mine-shaft-500: #6f685d;
+  --color-mine-shaft-600: #585349;
+  --color-mine-shaft-700: #48443d;
+  --color-mine-shaft-800: #3c3933;
+  --color-mine-shaft-900: #2f2d29;
+  --color-mine-shaft-950: #1c1b17;
+
+  --color-stone-750: #373330;
+  --color-stone-925: #141110;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 @layer base {
   :root {

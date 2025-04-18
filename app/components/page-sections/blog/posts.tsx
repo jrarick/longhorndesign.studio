@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { formatDate, getBlogPosts } from "app/blog/utils";
+import { unstable_ViewTransition as ViewTransition } from "react"
 
 export function BlogPosts() {
   let allBlogs = getBlogPosts();
@@ -30,15 +31,20 @@ export function BlogPosts() {
                 </time>
               </div>
               <div className="group relative">
-                <h3 className="mt-3 text-lg/6 font-semibold text-stone-100 group-hover:text-stone-200">
-                  <Link href={`/blog/${post.slug}`}>
-                    <span className="absolute inset-0" />
-                    {post.metadata.title}
-                  </Link>
-                </h3>
-                <p className="mt-5 line-clamp-3 text-sm/6 text-stone-300">
-                  {post.metadata.summary}
-                </p>
+                <ViewTransition name={post.slug}>
+                  <h3 className="mt-3 text-lg/6 font-semibold text-stone-100 group-hover:text-stone-200">
+                    <Link href={`/blog/${post.slug}`} className="block">
+                      <span className="absolute inset-0" />
+                      {post.metadata.title}
+                    </Link>
+                  </h3>
+                </ViewTransition>
+
+                <ViewTransition name={post.slug + "-date"}>
+                  <p className="mt-5 line-clamp-3 text-sm/6 text-stone-300">
+                    {post.metadata.summary}
+                  </p>
+                </ViewTransition>
               </div>
             </div>
           </article>

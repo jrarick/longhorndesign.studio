@@ -4,8 +4,6 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { TextEffect } from "app/components/animations/text-effect";
 import Link from "next/link";
-import canyonBackground from "app/assets/canyon-background.webp";
-import brushStroke from "app/assets/brush-stroke.png";
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -18,10 +16,10 @@ export default function Hero() {
       ref={heroRef}
       className="relative isolate -mt-28 overflow-hidden pt-24"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-stone-750 to-stone-950 from-75%">
+      <div className="absolute inset-0 bg-linear-to-b from-stone-750 to-stone-950 from-75%">
         <motion.img
           style={{ y: yValue }}
-          src={canyonBackground.src}
+          src="/canyon-background.webp"
           alt="Hand drawn picture of two cowboys riding horses through a canyon"
           className="h-full w-full object-cover mix-blend-multiply will-change-auto"
         />
@@ -32,6 +30,7 @@ export default function Hero() {
             as="div"
             per="char"
             className="inline-flex text-[1.575rem] font-semibold uppercase tracking-wide text-marzipan-200 sm:text-[2.45rem] md:text-[3.5rem]"
+            speedSegment={0.25}
             variants={{
               container: {
                 hidden: { opacity: 0 },
@@ -52,9 +51,6 @@ export default function Hero() {
                   rotateX: 0,
                   y: 0,
                   filter: "blur(0px) brightness(100%)",
-                  transition: {
-                    duration: 1.3,
-                  },
                 },
               },
             }}
@@ -66,6 +62,7 @@ export default function Hero() {
             per="char"
             delay={0.8}
             className="inline-flex font-display text-[4.5rem] uppercase leading-none text-marzipan-200 sm:text-[7rem] md:text-[10rem]"
+            speedSegment={0.25}
             variants={{
               container: {
                 hidden: { opacity: 0 },
@@ -88,9 +85,6 @@ export default function Hero() {
                   rotateX: 0,
                   y: 0,
                   filter: "blur(0px) brightness(100%)",
-                  transition: {
-                    duration: 1.3,
-                  },
                 },
               },
             }}
@@ -121,7 +115,7 @@ export default function Hero() {
             href="#contact"
             className="bg-contain bg-center bg-no-repeat px-16 py-6 text-lg font-semibold text-marzipan-200 transition-colors duration-200 hover:text-marzipan-100 sm:px-24 sm:py-8 sm:text-xl"
             style={{
-              backgroundImage: `url(${brushStroke.src})`,
+              backgroundImage: `url(/brush-stroke.png)`,
             }}
           >
             Get Started
