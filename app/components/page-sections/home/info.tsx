@@ -5,7 +5,7 @@ import { SpinningText } from "app/components/animations/spinning-text";
 
 export default function Info() {
   return (
-    <div className="my-24 py-24 sm:py-40">
+    <div className="my-24 py-28 sm:py-56">
       <motion.div
         initial="hidden"
         whileInView="visible"
