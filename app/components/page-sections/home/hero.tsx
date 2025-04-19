@@ -45,11 +45,13 @@ export default function Hero() {
                   filter: "blur(10px) brightness(0%)",
                   rotateX: 90,
                   y: 10,
+                  x: -10,
                 },
                 visible: {
                   opacity: 1,
                   rotateX: 0,
                   y: 0,
+                  x: 0,
                   filter: "blur(0px) brightness(100%)",
                 },
               },
@@ -79,11 +81,13 @@ export default function Hero() {
                   filter: "blur(10px) brightness(0%)",
                   rotateX: 45,
                   y: 10,
+                  x: -10,
                 },
                 visible: {
                   opacity: 1,
                   rotateX: 0,
                   y: 0,
+                  x: 0,
                   filter: "blur(0px) brightness(100%)",
                 },
               },
@@ -99,10 +103,12 @@ export default function Hero() {
             hidden: {
               opacity: 0,
               filter: "blur(10px) brightness(0%)",
+              y: 5,
             },
             visible: {
               opacity: 1,
               filter: "blur(0px) brightness(100%)",
+              y: 0,
               transition: {
                 delay: 2.2,
                 duration: 0.7,
