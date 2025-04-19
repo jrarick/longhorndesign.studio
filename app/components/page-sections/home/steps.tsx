@@ -170,7 +170,7 @@ export default function Steps() {
                   y: scrollDirection === "down" ? 10 : -10,
                   filter: "blur(10px) brightness(0%)",
                 }}
-                transition={{ duration: 0.15 }}
+                transition={{ duration: 0.15, delay: 0.1 }}
                 className="flex items-center justify-center"
               >
                 <BlurbSection blurb={blurbs[activeIndex]} />
