@@ -63,6 +63,8 @@ export default async function Blog({ params }) {
     notFound();
   }
 
+  const { title, publishedAt, summary, image } = post.metadata;
+
   return (
     <section className="px-6 py-32 lg:px-8">
       <script
@@ -72,13 +74,13 @@ export default async function Blog({ params }) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BlogPosting",
-            headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
-            description: post.metadata.summary,
-            image: post.metadata.image
-              ? `${baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+            headline: title,
+            datePublished: publishedAt,
+            dateModified: publishedAt,
+            description: summary,
+            image: image
+              ? `${baseUrl}${image}`
+              : `/og?title=${encodeURIComponent(title)}`,
             url: `${baseUrl}/blog/${post.slug}`,
             author: {
               "@type": "Person",
@@ -89,20 +91,15 @@ export default async function Blog({ params }) {
       />
       <div className="prose prose-stone mx-auto prose-invert">
         <ViewTransition name={slug}>
-          <h1 className="mb-0 font-display text-6xl font-medium">
-            {post.metadata.title}
-          </h1>
+          <h1 className="mb-0 font-display text-6xl font-medium">{title}</h1>
         </ViewTransition>
         <ViewTransition name={slug + "-date"}>
-          <time
-            dateTime={post.metadata.publishedAt}
-            className="text-sm text-stone-400"
-          >
-            {formatDate(post.metadata.publishedAt)}
+          <time dateTime={publishedAt} className="text-sm text-stone-400">
+            {formatDate(publishedAt)}
           </time>
         </ViewTransition>
         <hr className="border-stone-800" />
-        <article className="">
+        <article>
           <CustomMDX source={post.content} />
         </article>
       </div>

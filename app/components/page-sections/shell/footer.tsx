@@ -29,7 +29,7 @@ export default function Footer() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.8 }}
-      className="border-t border-stone-800 bg-stone-925"
+      className="border-t border-stone-800 bg-linear-to-b from-stone-925 to-stone-900"
     >
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
         <nav

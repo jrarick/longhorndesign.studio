@@ -79,7 +79,7 @@ export default function Hero() {
                 hidden: {
                   opacity: 0,
                   filter: "blur(10px) brightness(0%)",
-                  rotateX: 45,
+                  rotateX: 75,
                   y: 10,
                   x: -10,
                 },
@@ -102,7 +102,7 @@ export default function Hero() {
           variants={{
             hidden: {
               opacity: 0,
-              filter: "blur(10px) brightness(0%)",
+              filter: "blur(5px) brightness(0%)",
               y: 5,
             },
             visible: {

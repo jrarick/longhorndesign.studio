@@ -14,10 +14,12 @@ const itemVariants = {
   hidden: {
     opacity: 0,
     scale: 0.9,
+    filter: "blur(5px)",
   },
   visible: {
     opacity: 1,
     scale: 1,
+    filter: "blur(0px)",
   },
 };
 
@@ -71,7 +73,7 @@ export default function ContactForm() {
                 transition: {
                   duration: 0.5,
                   staggerChildren: 0.15,
-                  delayChildren: 0.8,
+                  delayChildren: 0.2,
                 },
               },
             }}

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { formatDate, getBlogPosts } from "app/blog/utils";
-import { unstable_ViewTransition as ViewTransition } from "react"
+import { unstable_ViewTransition as ViewTransition } from "react";
 
 export function BlogPosts() {
   let allBlogs = getBlogPosts();
@@ -22,14 +22,14 @@ export function BlogPosts() {
             className="flex flex-col items-start justify-between"
           >
             <div className="max-w-xl">
-              <div className="mt-8 flex items-center gap-x-4 text-xs">
+              <ViewTransition name={post.slug + "-date"}>
                 <time
                   dateTime={post.metadata.publishedAt}
                   className="text-stone-400 font-semibold"
                 >
                   {formatDate(post.metadata.publishedAt)}
                 </time>
-              </div>
+              </ViewTransition>
               <div className="group relative">
                 <ViewTransition name={post.slug}>
                   <h3 className="mt-3 text-lg/6 font-semibold text-stone-100 group-hover:text-stone-200">
@@ -39,12 +39,9 @@ export function BlogPosts() {
                     </Link>
                   </h3>
                 </ViewTransition>
-
-                <ViewTransition name={post.slug + "-date"}>
-                  <p className="mt-5 line-clamp-3 text-sm/6 text-stone-300">
-                    {post.metadata.summary}
-                  </p>
-                </ViewTransition>
+                <p className="mt-5 line-clamp-3 text-sm/6 text-stone-300">
+                  {post.metadata.summary}
+                </p>{" "}
               </div>
             </div>
           </article>

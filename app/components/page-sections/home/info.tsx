@@ -13,7 +13,7 @@ export default function Info() {
           amount: 0.5,
           once: true,
         }}
-        className="mx-auto flex max-w-6xl flex-col-reverse items-center px-10 md:flex-row md:space-x-12 lg:px-16"
+        className="mx-auto md:gap-y-0 flex max-w-6xl flex-col-reverse gap-y-48 items-center px-10 md:flex-row md:space-x-12 lg:px-16"
       >
         <motion.p
           variants={{
@@ -33,14 +33,14 @@ export default function Info() {
               },
             },
           }}
-          className="text-xl leading-normal text-stone-200 sm:text-2xl sm:leading-normal md:text-3xl md:leading-relaxed"
+          className="text-xl/10 text-stone-200 sm:text-2xl/12 md:text-3xl/14"
         >
           Based in Austin Texas, Longhorn Design Studio offers web design and
           development services to take your digital presence to the next level.
           We specialize in high-quality, bespoke designs curated for your
           brand's specific needs.
         </motion.p>
-        <div className="relative hidden min-w-64 bg-stone-200 md:block">
+        <div className="relative min-w-64 bg-stone-200">
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"
             width={40}
