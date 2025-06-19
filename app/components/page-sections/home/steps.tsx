@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { cn } from "@/app/lib/utils";
+import Image from "next/image";
 
 type Blurb = {
   id: number;
@@ -121,7 +122,9 @@ function StepSection({ blurb, index }: { blurb: Blurb; index: number }) {
           )}
         >
           <div className="relative inline-block aspect-square overflow-hidden text-stone-950 after:absolute after:left-0 after:top-0 after:block after:h-full after:w-full after:border-separate after:content-[''] after:[box-shadow:inset_0_0_10px_10px] max-h-full">
-            <img
+            <Image
+              width={500}
+              height={500}
               src={blurb.image.src}
               alt={blurb.image.alt}
               className="h-full w-full rounded-lg object-cover"
