@@ -156,7 +156,7 @@ function BlurbSection({ blurb }: { blurb: Blurb }) {
         <motion.h3
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true, amount: 0.2 }}
           className="mb-6 text-3xl md:text-5xl font-semibold text-stone-200"
         >
@@ -188,7 +188,7 @@ function BlurbSection({ blurb }: { blurb: Blurb }) {
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
         viewport={{ once: true, amount: 0.2 }}
         className="text-sm md:text-base font-medium leading-loose text-stone-400 max-w-xs md:max-w-sm"
       >
