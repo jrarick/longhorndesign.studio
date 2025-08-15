@@ -1,11 +1,11 @@
-import { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
+import { Metadata } from "next"
+import Image from "next/image"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "About",
   description: "Learn about what makes us special.",
-};
+}
 
 export default function About() {
   return (
@@ -23,7 +23,7 @@ export default function About() {
         <h1 className="font-bold text-3xl">Hey, I'm Josh.</h1>
         <p className="text-base/8 sm:text-xl/10 text-stone-200 font-semibold">
           I create websites, but you probably figured that out already. I hate
-          seeing businesses waste money on boring, derivative template slop so
+          seeing businesses waste money on boring and ineffective websites, so
           everything I create is totally custom and uniquely tailored to your
           brand.
         </p>
@@ -39,5 +39,5 @@ export default function About() {
         </p>
       </div>
     </div>
-  );
+  )
 }

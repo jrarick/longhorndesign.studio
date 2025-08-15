@@ -1,19 +1,19 @@
-"use client";
+"use client"
 
-import React from "react";
-import { motion } from "motion/react";
-import { cn } from "@/app/lib/utils";
-import Image from "next/image";
+import React from "react"
+import { motion } from "motion/react"
+import { cn } from "@/app/lib/utils"
+import Image from "next/image"
 
 type Blurb = {
-  id: number;
-  title: string;
-  content: string;
+  id: number
+  title: string
+  content: string
   image: {
-    src: string;
-    alt: string;
-  };
-};
+    src: string
+    alt: string
+  }
+}
 
 const blurbs: Blurb[] = [
   {
@@ -56,7 +56,7 @@ const blurbs: Blurb[] = [
       alt: "Cowboy in a dimly lit barn polishing a revolver",
     },
   },
-];
+]
 
 export default function Steps() {
   return (
@@ -91,17 +91,17 @@ export default function Steps() {
         ))}
       </div>
     </div>
-  );
+  )
 }
 
 function StepSection({ blurb, index }: { blurb: Blurb; index: number }) {
-  const isEven = index % 2 === 0;
+  const isEven = index % 2 === 0
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
       className="mx-auto max-w-7xl px-6 lg:px-8"
     >
@@ -114,7 +114,7 @@ function StepSection({ blurb, index }: { blurb: Blurb; index: number }) {
         <motion.div
           initial={{ opacity: 0, x: isEven ? -60 : 60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.2 }}
           className={cn(
             "h-[300px] w-full md:h-[400px] lg:h-[500px] flex justify-center",
@@ -146,7 +146,7 @@ function StepSection({ blurb, index }: { blurb: Blurb; index: number }) {
         </motion.div>
       </div>
     </motion.div>
-  );
+  )
 }
 
 function BlurbSection({ blurb }: { blurb: Blurb }) {
@@ -195,5 +195,5 @@ function BlurbSection({ blurb }: { blurb: Blurb }) {
         {blurb.content}
       </motion.p>
     </div>
-  );
+  )
 }
