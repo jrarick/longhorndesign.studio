@@ -112,9 +112,9 @@ function StepSection({ blurb, index }: { blurb: Blurb; index: number }) {
         )}
       >
         <motion.div
-          initial={{ opacity: 0, x: isEven ? -60 : 60 }}
+          initial={{ opacity: 0, x: isEven ? -20 : 20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.2, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.2 }}
           className={cn(
             "h-[300px] w-full md:h-[400px] lg:h-[500px] flex justify-center",
@@ -133,9 +133,9 @@ function StepSection({ blurb, index }: { blurb: Blurb; index: number }) {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: isEven ? 60 : -60 }}
+          initial={{ opacity: 0, x: isEven ? 20 : -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          transition={{ duration: 0.2, delay: 0.4, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.2 }}
           className={cn(
             "flex items-center justify-center",
@@ -153,15 +153,11 @@ function BlurbSection({ blurb }: { blurb: Blurb }) {
   return (
     <div className="max-w-xl md:p-8 h-[270px] md:h-[unset]">
       <div className="max-w-max">
-        <motion.h3
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true, amount: 0.2 }}
+        <h3
           className="mb-6 text-3xl md:text-5xl font-semibold text-stone-200"
         >
           {blurb.title}
-        </motion.h3>
+        </h3>
         <div
           className="my-8 flex h-0.5 w-full items-center justify-center bg-stone-200"
           aria-hidden={true}
@@ -185,15 +181,11 @@ function BlurbSection({ blurb }: { blurb: Blurb }) {
           </motion.span>
         </div>
       </div>
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
-        viewport={{ once: true, amount: 0.2 }}
+      <p
         className="text-sm md:text-base font-medium leading-loose text-stone-400 max-w-xs md:max-w-sm"
       >
         {blurb.content}
-      </motion.p>
+      </p>
     </div>
   )
 }
